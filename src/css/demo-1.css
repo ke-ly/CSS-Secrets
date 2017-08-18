@@ -1,0 +1,70 @@
+:root{
+    background: url('http://csssecrets.io/images/stone-art.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    --gray:#ddd;
+    --white:#fff;
+    --border:1px solid #ddd;
+
+}
+
+hr{
+    height: 0.5em;
+    background: currentColor
+}
+.box{
+    max-width: 20em;
+    height: 10em;
+	padding: 2em;
+	margin: 2em auto 0;
+	font: 100%/1.5 sans-serif;
+}
+
+/*半透明边框*/
+.box-1 {
+    border: 20px solid rgba(255,255,255,0.5);
+    background: #fff;
+    background-clip: padding-box;
+}
+
+.box-2{
+    background-color: #fff;
+/*    双重边框*/
+/*
+    border: 10px solid #655;
+    outline: 10px solid deeppink;
+*/
+
+/*多重边框    */
+    box-shadow: 0 0 0 10px #655, 0 0 0 20px deeppink,0 0 0 30px green;
+}
+
+.box-3{
+    background: url(http://csssecrets.io/images/code-pirate.svg) no-repeat #58a;
+    background-position: right 20px bottom 20px;
+}
+/**
+ * 边框内圆角
+ */
+.box-4{
+    background:var(--gray);
+    outline: 0.6rem solid red;
+    box-shadow: 0 0 0 0.4rem #655;
+    border-radius: 0.8rem;
+}
+/**
+ *条纹背景
+ */
+.box-5{
+    background: linear-gradient(#fb3 33.3%,#58a 0,#58a 66.6%,yellowgreen 0);
+    background-size: 100% 50px;
+}
+
+/**
+ * 斜向条纹
+ */
+.box-6{
+    background: linear-gradient(45deg,#fb3 50%,#58a 0%);
+    background-size: 50px 50px;
+}

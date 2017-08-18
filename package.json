@@ -1,0 +1,22 @@
+{
+  "name": "cssjiemi",
+  "version": "1.0.0",
+  "description": "css",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkerwin/CSS-Secrets.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "kly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkerwin/CSS-Secrets/issues"
+  },
+  "homepage": "https://github.com/kkerwin/CSS-Secrets#readme"
+}

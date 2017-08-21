@@ -1,0 +1,7 @@
+.box{
+    max-width: 20em;
+    height: 10em;
+	padding: 2em;
+	margin: 2em auto 0;
+	font: 100%/1.5 sans-serif;
+}

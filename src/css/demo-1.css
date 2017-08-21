@@ -13,13 +13,7 @@ hr{
     height: 0.5em;
     background: currentColor
 }
-.box{
-    max-width: 20em;
-    height: 10em;
-	padding: 2em;
-	margin: 2em auto 0;
-	font: 100%/1.5 sans-serif;
-}
+
 
 /*半透明边框*/
 .box-1 {
@@ -54,17 +48,82 @@ hr{
     border-radius: 0.8rem;
 }
 /**
- *条纹背景
+ *条纹背景(x)
+ *background:linear-gradient(c1 p%,c2 0%,c2 2p%,c3 0%,c3 3p%,c4 0%,c4 4p%,.....cn 0)
  */
 .box-5{
-    background: linear-gradient(#fb3 33.3%,#58a 0,#58a 66.6%,yellowgreen 0);
+    /*background: linear-gradient(#fb3 33.3%,#58a 0,#58a 66.6%,yellowgreen 0);*/
+    /*background: linear-gradient(#fb3 25%,#58a 0,#58a 50%,yellowgreen 0,yellowgreen 75%,red 0) no-repeat;*/
+    background: linear-gradient(#fb3 20%,#58a 0,#58a 40%,yellowgreen 0,yellowgreen 60%,red 0,red 80%,purple 0);
     background-size: 100% 50px;
 }
 
 /**
+ *条纹背景(y)
+ * @type {[type]}
+ */
+ .box-6{
+     background: linear-gradient(90deg,#fb3 20%,#58a 0,#58a 40%,yellowgreen 0,yellowgreen 60%,red 0,red 80%,purple 0);
+     background-size: 50px 100%;
+ }
+
+
+/**
  * 斜向条纹
  */
-.box-6{
-    background: linear-gradient(45deg,#fb3 50%,#58a 0%);
-    background-size: 50px 50px;
+.box-7{
+    /*background: linear-gradient(45deg,#fb3 25%,purple 0%,purple 50%,#fb3 0%,#fb3 75%,purple 0);
+     *background-size: 70.71px 70.71px;
+     *方法1
+    */
+    background: #fb3;
+    background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.5) 0,rgba(255,255,255,0.5) 20px,transparent 0,transparent 40px); /*方法2*/
+}
+/**
+ * 网格
+ */
+.box-8{
+    background: #58a;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.56) 1px, transparent 0),
+                      linear-gradient(90deg,rgba(255, 255, 255, 0.56) 1px, transparent 0),
+                      linear-gradient(#fff 2px, transparent 0),
+                      linear-gradient(90deg,#fff 2px, transparent 0);
+    background-size: 50px 50px,50px 50px,100px 100px,100px 100px;
+}
+/**
+ * 波点
+ */
+.box-9{
+    background: #58a;
+    background-image: radial-gradient(#fb2 30%,transparent 0),
+                      radial-gradient(#fb2 30%,transparent 0);
+    background-size: 30px 30px;
+    background-position: 0px 0px,15px 15px;
+}
+/**
+ * 棋盘
+ */
+.box-10{
+    background: #eee;
+    background-image:linear-gradient(45deg,rgba(0,0,0,.25) 25%, transparent 0,transparent 75%, rgba(0,0,0,.25) 0),
+                     linear-gradient(45deg,rgba(0,0,0,.25) 25%, transparent 0,transparent 75%, rgba(0,0,0,.25) 0);
+    background-position: 0 0, 15px 15px;
+    background-size: 30px 30px;
+}
+/**
+ * 色轮
+ * 要等css4
+ */
+.box-11{
+    background: #fff;
+    background: conic-gradient(red, yellow, lime, aqua, blue, fuchsia, red);
+}
+/**
+ * 信封
+ */
+.box-12{
+    padding: 1em;
+    background-color: #fff;
+    border: 6px solid transparent;
+    border-image: 6 repeating-linear-gradient(45deg,red 0, red 1em,transparent 0, transparent 2em,#58a 0, #58a 3em,transparent 0, transparent 4em);
 }

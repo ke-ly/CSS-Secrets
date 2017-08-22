@@ -1,0 +1,83 @@
+/**
+ * box-shadow:x轴偏移、y轴偏移、模糊值、扩张半径（根据你指定的值去扩大或
+（当指定负值时）缩小投影的尺寸）
+ * box-1为单侧投影
+ */
+.box-1{
+    background-color: #fb3;
+    /*box-shadow: 0px 40px 8px -8px rgba(0,0,0,.5);   bottom*/
+    /*box-shadow: 40px 0px 8px -8px rgba(0,0,0,.5);   right*/
+    /*box-shadow: -40px 0px 8px -8px rgba(0,0,0,.5);  left*/
+    box-shadow: 0px -40px 8px -8px rgba(0,0,0,.5);  top
+}
+.box-2{
+    background-color: #58a;
+    box-shadow: 20px 0px 4px -4px rgba(0,0,0,.5),
+                -20px 0px 4px -4px rgba(0,0,0,.5);
+}
+.box-3{
+    background: #fb3;
+    border-radius: 10px;
+    position: relative;
+    filter: drop-shadow(.2em .2em .2em rgba(0,0,0,.5));
+}
+.box-3:after{
+    content: '';
+    width: 0;
+    height: 0;
+    border: 1em solid transparent;
+    border-left-color: #fb3;
+    border-right-width: 0;
+    position: absolute;
+    top: 1em;
+    right: -1em;
+}
+.box.box-4{
+    width: 600px;
+    max-width: 600px;
+    padding: 10em;
+    background: url("http://csssecrets.io/images/tiger.jpg") 0 / cover fixed;
+}
+.box-4 .text{
+    max-width:23em;
+    margin: 0 auto;
+    padding: 2em;
+    position: relative;
+    z-index: 1;
+    background: hsla(0,0%,100%,.25) border-box;
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
+	            0 .5em 1em rgba(0, 0, 0, 0.6);
+	text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
+    overflow: hidden;
+}
+.box-4 .text:after{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("http://csssecrets.io/images/tiger.jpg") 0 / cover fixed;
+    z-index: -1;
+    filter: blur(10px);
+    margin: -30px;
+}
+.box-5{
+    position: relative;
+    background: #58a;
+    background: linear-gradient(-150deg,transparent 1.5em,#58a 0);
+    color:#fff;
+}
+.box-5:after{
+    content: '';
+    width: 1.73em;
+    height: 3em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background :linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.2) 0,rgba(0,0,0,.4))no-repeat 100% 0;
+    transform: translateY(-1.3em) rotate(-30deg);
+	transform-origin: bottom right;
+	border-bottom-left-radius: .5em;
+	box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15)
+}

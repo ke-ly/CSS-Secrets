@@ -1,0 +1,180 @@
+:root{
+    --yellow:#fb3;
+    --blue:#58a;
+}
+
+/**
+ * border-radius 的值可以为：100px/75px;用/分格
+ */
+.box-1{
+    background-color: var(--yellow);
+    border-radius: 50%;
+}
+.box-2{
+    background-color:var(--blue);
+    /*border-radius: 4px 10px 50px;*/ /*top-left top-right bottom-right bottom-left*/
+    border-radius: 100% 0 0 100% / 50%;
+}
+.box-3{
+    background-color: var(--yellow);
+    border-radius: 100% 0 0;
+}
+
+/**
+ * 平行四边形
+ */
+.box-4.box{
+    max-width: 1200px;
+}
+.box-4 ul{
+    padding-left: 2em;
+    overflow: hidden;
+}
+.box-4 li{
+    display: block;
+    float: left;
+    padding: 0.5em 1.5em;
+    color: #fff;
+    transition: all 0.3s;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.box-4 li:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border: 1px solid #1c99d4;
+    background-color: #1c99d4;
+    transform: skewX(-45deg);
+}
+.box-4 li:hover:after,.box-4 li.on:after{
+    background-color: #277fb2;
+    border-color: #277fb2;
+}
+/**
+ * 菱形
+ */
+
+.box.box-5{
+    width: 400px;
+    max-width: 400px;
+    height: 400px;
+    padding: 0;
+    border: 1px solid #ddd;
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+.box.box-5 img{
+    max-width: 100%;
+    transform: rotate(-45deg) scale(1.42); /*根号二等于1.42..，放大根号二倍*/
+}
+/**
+ * 切角效果
+ * 单个角只需要1个渐变，且不需要size和repeat
+ */
+.box-6{
+    margin-top: 6em;
+    background: var(--blue);
+    background: linear-gradient(135deg,transparent 15px,var(--blue) 0) top left,
+                linear-gradient(-135deg,transparent 15px,var(--blue) 0) top right,
+                linear-gradient(45deg,transparent 15px,var(--blue) 0) bottom left,
+                linear-gradient(-45deg,transparent 15px,var(--blue) 0) bottom right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+/**
+ * 弧形切角
+ */
+ .box-7{
+     background: var(--blue);
+     background: radial-gradient(circle at top left,transparent 15px,var(--blue) 0) top left,
+                 radial-gradient(circle at top right,transparent 15px,var(--blue) 0) top right,
+                 radial-gradient(circle at bottom left,transparent 15px,var(--blue) 0) bottom left,
+                 radial-gradient(circle at bottom right,transparent 15px,var(--blue) 0) bottom right;
+     background-size: 50% 50%;
+     background-repeat: no-repeat;
+ }
+/**
+ * 梯形
+ */
+.box.box-8{
+    width: 1000px;
+    max-width: 1000px;
+}
+.box-8 nav{
+    display: block;
+    padding: 1em;
+    overflow: hidden;
+    z-index: 1;
+}
+.box-8 nav a{
+    display: block;
+    float: left;
+    padding: 0.2em 3em;
+    margin: 0 -0.3em;
+    position: relative;
+}
+.box-8 nav a::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: #ccc linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,0));
+    box-shadow: 0 .15em white inset;
+    border: .1em solid rgba(0,0,0,.4);
+    border-radius: .8em .8em 0 0;
+    border-bottom: 0;
+    transform: perspective(2em) rotateX(10deg) scaleY(1.5);
+}
+.box-8 nav.center a::before{
+    transform-origin: bottom;
+}
+.box-8 nav.left a::before{
+    transform-origin: bottom left;
+}
+.box-8 nav.right a::before{
+    transform-origin: bottom right;
+}
+.box-8 nav a.on{
+    z-index: 2
+}
+.box-8 nav a.on:before{
+    background-color: #eee;
+	margin-bottom: -.08em;
+}
+.pie{
+    width: 400px;
+    height: 400px;
+    margin: 10em auto;
+    border-radius: 50%;
+    background: yellowgreen;
+    background-image:linear-gradient(to right, transparent 50%, #655 0);
+}
+
+.pie::before {
+	content: '';
+	display: block;
+	margin-left: 50%;
+	height: 100%;
+	border-radius: 0 100% 100% 0 / 50%;
+	background-color: inherit;
+	transform-origin: left;
+	animation: spin 3s linear infinite, bg 6s step-end infinite;
+}
+
+@keyframes spin {
+	to { transform: rotate(.5turn); }
+}
+@keyframes bg {
+	50% { background: #655; }
+}

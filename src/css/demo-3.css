@@ -67,6 +67,7 @@
     background: #58a;
     background: linear-gradient(-150deg,transparent 1.5em,#58a 0);
     color:#fff;
+    border-radius: 0.5em;
 }
 .box-5:after{
     content: '';

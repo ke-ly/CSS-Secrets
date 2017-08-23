@@ -1,0 +1,102 @@
+
+.box{
+    border: 1px solid #eee;
+}
+.box-1{
+    text-align: justify;
+    hyphens: auto;
+}
+.box-2 dd{
+    margin-left: 0;
+    font-weight: bold;
+}
+.box-2 dd+dt::before{
+    content: '\A';
+    white-space: pre;
+}
+.box-2 dd+dd::before{
+    content: ',';
+    margin-left: -0.25em;
+    white-space: normal;
+}
+.box-2 dd,.box-2 dt{
+    display: inline;
+}
+
+.box.box-3{
+    max-width: 1000px;
+    height: auto;
+    padding: 0
+}
+.box pre{
+    margin: 0;
+    font-size:1.5em;
+    background: hsl(20, 50%, 95%);
+    background-image: linear-gradient(rgba(120,0,0,.1) 50%,transparent 0);
+    background-size: auto 3em;
+}
+.box-4.box{
+    max-width: 800px;
+    height: auto;
+}
+.box-4 p{
+    padding: 2em 0;
+    background: hsl(210, 13%, 60%);
+    color: hsl(210, 13%, 30%);
+    font-size: 1.5em;
+
+    text-shadow: 0px 3px 5px rgba(255,255,255,.5);
+}
+.box-4 p + p{
+    background: hsl(210, 13%, 30%);
+	color: hsl(210, 13%, 60%);
+
+    text-shadow: 0px -3px 5px #000;
+}
+.box-5{
+    width: 600px;
+    margin: 2em auto;
+    padding: 1em 0;
+    font-size: 60px;
+    font-weight: 800;
+    background: deeppink;
+    color: #fff;
+    text-transform: uppercase;
+
+    text-shadow: 1px 1px #000,-1px -1px #000,
+                 1px -1px #000,-1px 1px #000;
+}
+.box-6{
+    background: #203;
+    font-size: 30px;
+    color: #ffc;
+    text-shadow: 0 0 .1em #fff, 0 0 .3em #fff;
+}
+.box-7{
+    background: #58a;
+	color: white;
+    font-size: 50px;
+    text-transform: uppercase;
+
+
+    text-shadow: 0 1px rgba(255,255,255,0.85),
+                0 2px rgba(255,255,255,0.8),
+                0 3px rgba(255,255,255,0.75),
+                0 4px rgba(255,255,255,0.70),
+                0 5px rgba(255,255,255,0.65),
+                0 5px 10px #000;
+}
+#lightbox{
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    border: 1px solid #ddd;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0 0 999px rgba(0,0,0,.8);
+}
+#lightbox.hide{
+    display: none;
+}
